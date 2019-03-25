@@ -1,0 +1,101 @@
+﻿@model List<GdpEntry>
+@{
+    double gdp1 = (double)Model[0].Gdp / 1000000000000;
+    string name1 = Model[0].CountryEntry.Name;
+
+    double gdp2 = (double)Model[1].Gdp / 1000000000000;
+    string name2 = Model[1].CountryEntry.Name;
+
+    double gdp3 = (double)Model[2].Gdp / 1000000000000;
+    string name3 = Model[2].CountryEntry.Name;
+
+    double gdp4 = (double)Model[3].Gdp / 1000000000000;
+    string name4 = Model[3].CountryEntry.Name;
+
+    double gdp5 = (double)Model[4].Gdp / 1000000000000;
+    string name5 = Model[4].CountryEntry.Name;
+
+    double gdp6 = (double)Model[5].Gdp / 1000000000000;
+    string name6 = Model[5].CountryEntry.Name;
+
+    double gdp7 = (double)Model[6].Gdp / 1000000000000;
+    string name7 = Model[6].CountryEntry.Name;
+
+    double gdp8 = (double)Model[7].Gdp / 1000000000000;
+    string name8 = Model[7].CountryEntry.Name;
+
+    double gdp9 = (double)Model[8].Gdp / 1000000000000;
+    string name9 = Model[8].CountryEntry.Name;
+
+    double gdp10 = (double)Model[9].Gdp / 1000000000000;
+    string name10 = Model[9].CountryEntry.Name;
+}
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Nations', 'GDP (in Trillions USD)'],
+          ['@name1', @gdp1], ['@name2', @gdp2], ['@name3', @gdp3],
+          ['@name4', @gdp4], ['@name5', @gdp5], ['@name6', @gdp6],
+          ['@name7', @gdp7], ['@name8', @gdp8], ['@name9', @gdp9],
+          ['@name10', @gdp10],
+        ]);
+
+        var options = {
+          title: 'World Economy by GDP (in Trillions)',
+          legend: 'none',
+          pieSliceText: 'label',
+          slices: {  4: {offset: 0.2},
+                    12: {offset: 0.3},
+                    14: {offset: 0.4},
+                    15: {offset: 0.5},
+          'backgroundColor': 'transparent'
+          },
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

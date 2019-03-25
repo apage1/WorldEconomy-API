@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html> <!--TABLE OF NATIONS-->
+<h1>Table of Nations (API)</h1>
+@model List<GdpEntry>
+@{
+    ViewData["Title"] = "Data";
+}
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <table border="1" width="100%">
+        <tr>
+            <th>Country</th>
+            <th>Currency</th>
+            <th>GDP</th>
+            <th>Year</th>
+            @foreach (var gdpentry in Model)
+            {
+            <tr>
+                <td>@gdpentry.CountryEntry.Name</td>
+                <td>@gdpentry.Indicator.Name</td>
+                <td>@gdpentry.Gdp</td>
+                <td>@gdpentry.Year
+            </tr>
+        }
+        </table>
+    </body>
+</html>
+
+<!---->
